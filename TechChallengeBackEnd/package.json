@@ -1,0 +1,46 @@
+{
+   "name": "biblioteca",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "type": "commonjs",
+   "devDependencies": {
+      "@types/cors": "^2.8.17",
+      "@types/express": "^4.17.21",
+      "@types/jest": "^29.5.12",
+      "@types/jsonwebtoken": "^9.0.6",
+      "@types/node": "^16.11.10",
+      "@types/supertest": "^6.0.2",
+      "jest": "^29.7.0",
+      "nodemon": "^3.1.4",
+      "supertest": "^7.0.0",
+      "ts-jest": "^29.2.2",
+      "ts-node": "^10.9.2",
+      "ts-node-dev": "^2.0.0",
+      "typescript": "^4.9.5"
+   },
+   "dependencies": {
+      "@types/bcryptjs": "^2.4.6",
+      "@types/swagger-ui-express": "^4.1.6",
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.20.2",
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "express": "^4.19.2",
+      "express-async-errors": "^3.1.1",
+      "jsonwebtoken": "^9.0.2",
+      "pg": "^8.12.0",
+      "reflect-metadata": "^0.1.14",
+      "swagger-autogen": "^2.23.7",
+      "swagger-ui-express": "^5.0.1",
+      "typeorm": "^0.3.20"
+   },
+   "scripts": {
+      "build": "tsc",
+      "dev": "npm install && npm run typeorm -- -d ./src/database/data-source.ts migration:run && nodemon --watch src --exec 'ts-node' src/server.ts",
+      "start": "node build/server",
+      "test": "jest --coverage",
+      "test:watch": "jest --watch",
+      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+      "dev:server": "ts-node-dev src/server.ts"
+   }
+}
